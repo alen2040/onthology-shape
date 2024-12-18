@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/its#"
+     xml:base="http://www.example.org/its"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://www.example.org/its"/>
+
+    <!-- Classes -->
+    <owl:Class rdf:about="http://www.example.org/its#IntelligentTutoringSystem"/>
+    <owl:Class rdf:about="http://www.example.org/its#User"/>
+    <owl:Class rdf:about="http://www.example.org/its#Student"/>
+    <owl:Class rdf:about="http://www.example.org/its#Tutor"/>
+    <owl:Class rdf:about="http://www.example.org/its#LearningMaterials"/>
+    <owl:Class rdf:about="http://www.example.org/its#Assessment"/>
+    <owl:Class rdf:about="http://www.example.org/its#ProgressTracking"/>
+    <owl:Class rdf:about="http://www.example.org/its#Feedback"/>
+
+    <!-- Relationships (Object Properties) -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#interactsWith">
+        <rdfs:domain rdf:resource="http://www.example.org/its#IntelligentTutoringSystem"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#User"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#provides">
+        <rdfs:domain rdf:resource="http://www.example.org/its#IntelligentTutoringSystem"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#LearningMaterials"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#linkedTo">
+        <rdfs:domain rdf:resource="http://www.example.org/its#LearningMaterials"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#Assessment"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#tracks">
+        <rdfs:domain rdf:resource="http://www.example.org/its#IntelligentTutoringSystem"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#ProgressTracking"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#influences">
+        <rdfs:domain rdf:resource="http://www.example.org/its#ProgressTracking"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#Feedback"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#delivers">
+        <rdfs:domain rdf:resource="http://www.example.org/its#IntelligentTutoringSystem"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#Feedback"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.example.org/its#isA">
+        <rdfs:domain rdf:resource="http://www.example.org/its#User"/>
+        <rdfs:range rdf:resource="http://www.example.org/its#Student"/>
+    </owl:ObjectProperty>
+
+    <!-- Individuals (Instances) -->
+    <its:IntelligentTutoringSystem rdf:about="http://www.example.org/its#ITS1"/>
+    <its:User rdf:about="http://www.example.org/its#User1"/>
+    <its:Student rdf:about="http://www.example.org/its#Student1"/>
+    <its:Tutor rdf:about="http://www.example.org/its#Tutor1"/>
+    <its:LearningMaterials rdf:about="http://www.example.org/its#LearningMaterials1"/>
+    <its:Assessment rdf:about="http://www.example.org/its#Assessment1"/>
+    <its:ProgressTracking rdf:about="http://www.example.org/its#ProgressTracking1"/>
+    <its:Feedback rdf:about="http://www.example.org/its#Feedback1"/>
+
+    <!-- Relationships Between Instances -->
+    <its:interactsWith rdf:resource="http://www.example.org/its#User1"/>
+    <its:provides rdf:resource="http://www.example.org/its#LearningMaterials1"/>
+    <its:linkedTo rdf:resource="http://www.example.org/its#Assessment1"/>
+    <its:tracks rdf:resource="http://www.example.org/its#ProgressTracking1"/>
+    <its:influences rdf:resource="http://www.example.org/its#Feedback1"/>
+    <its:delivers rdf:resource="http://www.example.org/its#Feedback1"/>
+    <its:isA rdf:resource="http://www.example.org/its#Student1"/>
+
+</rdf:RDF>
